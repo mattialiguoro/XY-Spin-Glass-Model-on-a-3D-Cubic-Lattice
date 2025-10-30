@@ -1,0 +1,7 @@
+spin_per_lato=4
+mosse_montecarlo=5000
+numero_sistemi=2
+fraction_of_pi=0.48
+T_min=0.265
+T_max=0.6
+N_sample=4
