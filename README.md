@@ -3,3 +3,27 @@ In this project, I studied the XY spin glass model on a 3D cubic lattice using a
 
 # How the code works:
 The file montecarlo.hpp contains the core of the simulation, which relies on the "randnumgen.hpp" library to generate pseudo-random numbers. The "main.cpp" file calls these components to execute the program. Finally, an example configuration file named "config.txt" is included, from which the program reads the system control parameters.
+
+\textbf{Class} & \textbf{Description} \\ 
+\hline
+\texttt{sys} & Represents a single physical system at a fixed temperature. 
+It stores the spin configuration, the coupling matrix, and provides the main update routines 
+(Metropolis and over-relaxation). Each \texttt{sys} object can evolve independently 
+and output its energy and configuration. \\ 
+\hline
+\texttt{replica} & Manages a set of systems at different temperatures and performs 
+\textbf{Parallel Tempering} exchanges between them. 
+This allows the system to overcome energy barriers and reach equilibrium faster. 
+Each replica evolves all its temperature points in parallel using multithreading. \\ 
+\hline
+\texttt{replicas2} & Contains two independent replicas that share the same disorder realization 
+(same $J_{ij}$). It is mainly used to compute overlap observables and correlation lengths 
+related to spin-glass ordering. \\ 
+\hline
+\texttt{montecarlo} & Handles multiple disorder samples. 
+Each sample corresponds to a different random realization of the couplings, 
+and the class averages physical quantities over all samples to produce quenched averages. \\ 
+\hline
+\end{tabularx}
+\caption{General structure of the main classes in the XY spin glass Monte Carlo simulation code.}
+\end{table}
