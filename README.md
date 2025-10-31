@@ -12,6 +12,7 @@ The file montecarlo.hpp contains the core of the simulation, which relies on the
 | `replicas2` | Contains two independent replicas that share the same disorder realization (same $J_{ij}$). It is mainly used to compute overlap observables and correlation lengths related to spin-glass ordering. |
 | `montecarlo` | Handles multiple disorder samples. Each sample corresponds to a different random realization of the couplings, and the class averages physical quantities over all samples to produce quenched averages. |
 
+For further details on the architecture, you can check the "XY spin glass model.pdf", where each method and class is explained in detail.
 ---
 If you have any questions about the implementation, would like further clarifications, or have suggestions for improvement, feel free to reach out — I’ll be happy to discuss and help.
 
